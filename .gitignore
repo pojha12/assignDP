@@ -4,7 +4,8 @@ build/
 *.war
 *.ear
 .idea
-*.idea/
+/.idea/
+.idea/workspace.xml
 
 
 
