@@ -1,4 +1,4 @@
-*.Ds_Store
+*.DS_Store
 .gradle/
 build/
 *.war
@@ -23,4 +23,4 @@ local.properties
 .settings/
 .loadpath
 
-*.Ds_Store
+
