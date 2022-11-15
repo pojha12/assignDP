@@ -14,24 +14,28 @@ dependencies {
     implementation "junit:junit:4.12"
     implementation files('bin/')
 }
- 
- 
  apply plugin: 'checkstyle'
- checkstyle {
-//   // Keep checkstyle a little quieter
-   ignoreFailures = true
-   showViolations = false
- }
+checkstyle {
+	// Keep checkstyle a little quieter
+	ignoreFailures = true
+	showViolations = false
+}
 
- tasks.withType(Checkstyle) {
-   reports {
-     html.enabled = true
-     xml.enabled = false
-   }
- }
- checkstyle {
-     toolVersion = "8.8"
- }
+tasks.withType(Checkstyle) {
+	reports {
+		html.enabled = true
+		xml.enabled = false
+        html.destination rootProject.file("build/reports/checkstyle/checkstyle.html")
+  }
+}
+checkstyle {
+	toolVersion = "8.8"
+    config = rootProject.resources.text.fromFile('config/checkstyle/checkstyle.xml')
+
+}
+tasks.withType(Checkstyle).each {
+    it.group = 'verification'
+}
 
  spotbugsMain {
      reports {
