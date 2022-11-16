@@ -71,7 +71,7 @@ set CLASSPATH=%APP_HOME%\lib\assignDP.jar;%APP_HOME%\lib\bin;%APP_HOME%\lib\juni
 
 
 @rem Execute assignDP
-"%JAVA_EXE%" %DEFAULT_JVM_OPTS% %JAVA_OPTS% %ASSIGN_DP_OPTS%  -classpath "%CLASSPATH%" src/main/java/Main %*
+"%JAVA_EXE%" %DEFAULT_JVM_OPTS% %JAVA_OPTS% %ASSIGN_DP_OPTS%  -classpath "%CLASSPATH%" Main %*
 
 :end
 @rem End local scope for the variables with windows NT shell
