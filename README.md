@@ -1,5 +1,7 @@
 # assignDP
 
+Screencast: https://youtu.be/1GP6KqJdkPg 
+
 Singleton: only one world(game) gets created
     - Each Cycle (Round) should have its own weather event
     - Trainer can acquire more code-a-mons (max of 6) throughout their adventure
