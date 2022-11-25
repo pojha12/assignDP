@@ -1,7 +1,15 @@
 
+/*
+ * File: Main.java
+ * @author: Palak Ojha
+ */
 public class Main {
+    
+    /*
+     * start game from here
+     */
     public static void main(String[] args) {
-        System.out.println("assign 5a");
+        Game.getGame().runGameRounds(8);
     }
 
 }
