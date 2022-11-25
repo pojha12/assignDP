@@ -1,9 +1,10 @@
+
 plugins {
      id "com.github.spotbugs" version "5.0.12"
      id "checkstyle"
-     id "jacoco"
 }
 
+ apply plugin: 'jacoco'
  apply plugin: 'java'
  apply plugin: 'application'
  mainClassName = 'Main'
@@ -17,7 +18,9 @@ dependencies {
     implementation "junit:junit:4.12"
     implementation files('bin/')
 }
+
  apply plugin: 'checkstyle'
+ 
 checkstyle {
 	// Keep checkstyle a little quieter
 	ignoreFailures = true
@@ -29,19 +32,12 @@ java {
 		languageVersion = JavaLanguageVersion.of(18)
 	}
 }
-
-jacoco {
-    toolVersion = "0.8.8"
-    reportsDirectory = layout.buildDirectory.dir('customJacocoReportDir')
-}
-
-test {
-    finalizedBy jacocoTestReport
-}
 jacocoTestReport {
-    reports {
-        xml.required = false
-        csv.required = false
+    dependsOn test // tests are required to run before generating the report
+ 
+    reports{
+        html.enabled = true
+        xml.enabled = false
     }
 }
 
@@ -75,3 +71,5 @@ tasks.withType(Checkstyle).each {
      showProgress = true
      effort = 'max'
  }
+
+

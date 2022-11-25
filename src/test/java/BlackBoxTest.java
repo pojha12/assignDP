@@ -4,9 +4,12 @@ import org.junit.Test;
 
 import static org.junit.Assert.*;
 
-public class BlackBoxTest {
+import java.util.concurrent.ThreadLocalRandom;
 
-    Game game;
+
+public class BlackBoxTest {
+  
+
 
     @Before
     public void setUp() throws Exception {
@@ -18,11 +21,12 @@ public class BlackBoxTest {
     }
 
     @Test
-    void test1() {
-        Trainer t = new Trainer();
-        Attack att = new Attack(t, Round.Time.DAY);
+    public void test1() throws Exception{
+        
+//        Trainer trainer = new Trainer();
+//        @SuppressWarnings("unused")
+//        Attack a = new Attack(trainer,Round.Time.DAY);
         assertTrue(true);
-
-    }
+        }
 
 }

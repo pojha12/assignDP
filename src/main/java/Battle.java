@@ -12,11 +12,11 @@ public class Battle implements Statistics {
      * @param: topponent
      * @param: opp
      */
-    public Battle(Trainer trainer, CodeAMon attack, Trainer topponent, CodeAMon opp) {
-        attacker = attack;
-        defender = opp;
-        attackTrainer = trainer;
-        defendTrainer = topponent;
+    public Battle(Trainer attackTrainer, CodeAMon attacker, Trainer defendTrainer, CodeAMon defender) {
+        this.attacker = attacker;
+        this.defender = defender;
+        this.attackTrainer = attackTrainer;
+        this.defendTrainer = defendTrainer;
         attacker.setBonus(defender);
         defender.setBonus(attacker);
     }
